@@ -42,8 +42,8 @@ export default function UserPages() {
                     <span className="bold-text status text-[16px] font-bold">Aktif</span>
                 </div>
 
-                <div className="border border-black rounded-lg p-2 flex justify-between items-center ">
-                    <div>
+                <div className="border border-black rounded-lg p-2 flex justify-between items-center user-card">
+                    <div className="user-info"> 
                         <h2 className="text-[18px] font-bold mb-[1px]">Lebah Ganteng</h2>
                         <p className="text-base text-black mb-2">lebahganteng@universitasmulia.ac.id</p>
                         <span className="bg-black text-white text-[11px] px-[6px] py-[3px] rounded mr-[6px] inline-block badge">Employee</span>
