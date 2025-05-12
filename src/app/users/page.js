@@ -3,12 +3,12 @@ import { IconLogout2, IconUser, IconUserBolt, IconUserCog } from "@tabler/icons-
 export default function UserPages() {
     return (
         <div id="container" className="flex h-[100vh] text-black">
-           <section id="navigation" className=" bg-white-500 p-10 w-[200px] border-r border-black p-3 flex flex-col gap-10">
+           <section id="navigation" className=" bg-white-500 p-10 w-[220px] border-r border-black p-5 flex flex-col gap-10">
            <h1 className="text-3xl font-bold text-center">Connect</h1>
            <div className="flex flex-col gap-3 mt-4">
-            <button className="bg-transparent border-none p-2.5 text-left text-base cursor-pointer flex items-center gap-2 text-black rounded-lg"> <IconUser />  Users</button>
-            <button className="bg-transparent border-none p-2.5 text-left text-base cursor-pointer flex items-center gap-2 text-black rounded-lg"> <IconUserCog /> Hak akses</button>
-            <button className="bg-transparent border-none p-2.5 text-left text-base cursor-pointer flex items-center gap-2 text-black rounded-lg"> <IconLogout2 /> Logout</button>
+            <button className="bg-transparent border-none p-2.5 text-left text-base cursor-pointer flex items-center gap-2 text-black rounded-lg font-bold"> <IconUser />  Users</button>
+            <button className="bg-transparent border-none p-2.5 text-left text-base cursor-pointer flex items-center gap-2 text-black rounded-lg font-bold"> <IconUserCog /> Hak akses</button>
+            <button className="bg-transparent border-none p-2.5 text-left text-base cursor-pointer flex items-center gap-2 text-black rounded-lg font-bold"> <IconLogout2 /> Logout</button>
            </div>
            </section>
            <section id = "content" className="bg-white w-[85%] flex-1 p-[30px] overflow-y-auto">
@@ -21,7 +21,7 @@ export default function UserPages() {
                         <span className="bg-black text-white text-[11px] px-[6px] py-[3px] rounded mr-[6px] inline-block badge">Admin</span>
                         <span className="bg-black text-white text-[11px] px-[6px] py-[3px] rounded mr-[6px] inline-block badge">Employee</span>
                     </div>
-                    <span className="bold-text status text-[16px]">Aktif</span>
+                    <span className="bold-text status text-[16px] font-bold">Aktif</span>
                 </div>
 
                 <div className="border border-black rounded-lg p-2 flex justify-between items-center user-card">
@@ -30,7 +30,7 @@ export default function UserPages() {
                         <p className="text-base text-black mb-2">lintang@universitasmulia.ac.id</p>
                         <span className="bg-black text-white text-[11px] px-[6px] py-[3px] rounded mr-[6px] inline-block badge">Employee</span>
                     </div>
-                    <span className="bold-text status text-[16px]">Aktif</span>
+                    <span className="bold-text status text-[16px] font-bold">Aktif</span>
                 </div>
 
                 <div className="border border-black rounded-lg p-2 flex justify-between items-center user-card">
@@ -39,7 +39,7 @@ export default function UserPages() {
                         <p className="text-base text-black mb-2">shafira@universitasmulia.ac.id</p>
                         <span className="bg-black text-white text-[11px] px-[6px] py-[3px] rounded mr-[6px] inline-block badge">Employee</span>
                     </div>
-                    <span className="bold-text status text-[16px]">Aktif</span>
+                    <span className="bold-text status text-[16px] font-bold">Aktif</span>
                 </div>
 
                 <div className="border border-black rounded-lg p-2 flex justify-between items-center ">
@@ -48,7 +48,7 @@ export default function UserPages() {
                         <p className="text-base text-black mb-2">lebahganteng@universitasmulia.ac.id</p>
                         <span className="bg-black text-white text-[11px] px-[6px] py-[3px] rounded mr-[6px] inline-block badge">Employee</span>
                     </div>
-                    <span className="bold-text status text-[16px]">Suspended</span>
+                    <span className="bold-text status text-[16px] font-bold">Suspended</span>
                 </div>
             </div>
            </section>
