@@ -13,7 +13,7 @@ export default function UserPages() {
         className="bg-white p-10 w-[220px] border-r flex flex-col"
       >
         <h1 className="text-3xl font-bold text-center">Connect</h1>
-        <div className="flex flex-col gap-4 mt-15">
+        <div className="flex flex-col gap-3 mt-15">
           <button className="p-2.5 text-left text-base cursor-pointer flex items-center gap-2 rounded-lg font-bold">
             {" "}
             <IconUser /> Users
@@ -109,4 +109,7 @@ export default function UserPages() {
       </button>
     </div>
   );
+
 }
+
+
