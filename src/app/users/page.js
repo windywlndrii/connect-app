@@ -15,15 +15,12 @@ export default function UserPages() {
         <h1 className="text-3xl font-bold text-center">Connect</h1>
         <div className="flex flex-col gap-3 mt-15">
           <button className="p-2.5 text-left text-base cursor-pointer flex items-center gap-2 rounded-lg font-bold">
-            {" "}
             <IconUser /> Users
           </button>
           <button className="p-2.5 text-left text-base cursor-pointer flex items-center gap-2 rounded-lg font-bold">
-            {" "}
             <IconUserCog /> Hak akses
           </button>
           <button className="p-2.5 text-left text-base cursor-pointer flex items-center gap-2 rounded-lg font-bold">
-            {" "}
             <IconLogout2 /> Logout
           </button>
         </div>
