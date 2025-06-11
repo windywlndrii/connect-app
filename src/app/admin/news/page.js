@@ -1,24 +1,18 @@
 "use client";
-import UserCard from "@/components/ui/user-card";
+import PostCard from "@/components/post-card";
 import { dataUser } from "@/mock/data-user";
-import {
-  IconUser,
-  IconUserCog,
-  IconLogout,
-  IconPlus,
-} from "@tabler/icons-react";
 import useSWR from "swr";
   
 
-export default function UserPages() {
-  const data = dataUser;
+export default function NewsPages() {
+  
   const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 const {
-  data: users, 
+  data: posts, 
   error, 
   isLoading }
-   = useSWR(`https://jsonplaceholder.typicode.com/users`, fetcher);
+   = useSWR(`https://jsonplaceholder.typicode.com/posts`, fetcher);
 
    if (isLoading) {
     return (
@@ -36,35 +30,32 @@ const {
     );
    }
 
-   console.log(users);
+   console.log(posts);
+
 
 
   return (
     <div id="container" className="flex h-[100vh] text-black">
       <section
-        id="content"
+        id="News"
         className="bg-white w-[85%] flex-1 p-[30px]"
       >
         <input
           type="search"
-          placeholder="Cari User"
+          placeholder="Cari Berita"
           className="w-full p-3 border rounded-lg mb-7 text-base"
         ></input>
         <div className="flex flex-col gap-4">
-          {users.map((employee, index) => (
-            <UserCard
+          {posts.map((employee, index) => (
+            <PostCard
               key={index}
-              fullname={employee.name}
-              email={employee.email}
-              role={employee.phone}
-              status={employee.website}
+              id={employee.id}
+              title={employee.title}
+              body={employee.body}
             />
           ))}
         </div>
       </section>
-      <button className="fixed right-5 bottom-5 w-[42px] h-[42px] rounded-lg text-[26px] bg-[#e0e0e0] cursor-pointer">
-        +
-      </button>
     </div>
   );
 }
