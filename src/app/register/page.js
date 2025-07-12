@@ -1,13 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-
+import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase';
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const router = useRouter();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -15,8 +17,19 @@ export default function RegisterPage() {
       return;
     }
 
-    // Tambahkan logika kirim data ke backend di sini
-    alert(`Email: ${email}, Password: ${password}`);
+    // Daftar user di Supabase
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert(`Registrasi gagal: ${error.message}`);
+      return;
+    }
+
+    alert("Registrasi berhasil! Silakan cek email Anda untuk verifikasi.");
+    router.push('/login');
   };
 
   return (

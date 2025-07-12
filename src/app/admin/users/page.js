@@ -18,7 +18,7 @@ const {
   data: users, 
   error, 
   isLoading }
-   = useSWR(`https://jsonplaceholder.typicode.com/users`, fetcher);
+   = useSWR("https://jsonplaceholder.typicode.com/users", fetcher);
 
    if (isLoading) {
     return (

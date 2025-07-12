@@ -1,14 +1,27 @@
 'use client';
 
 import { useState } from 'react';
-
+import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    alert(`Email: ${email}, Password: ${password}`);
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert('Email atau password salah!');
+    } else {
+      alert('Login berhasil!');
+      router.push('/admin/users'); // Arahkan ke dashboard
+    }
   };
 
   return (
@@ -23,19 +36,26 @@ export default function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
           <p className="text-sm text-center">
-            Don’t have an account? <a href="/register" className="text-white hover:underline">Register</a></p>
+            Don’t have an account?{' '}
+            <a href="/register" className="text-blue-600 hover:underline">
+              Register
+            </a>
+          </p>
           <button
             type="submit"
-            className="bg-black text-white py-3 rounded-md transition duration-300">
+            className="bg-black text-white py-3 rounded-md transition duration-300"
+          >
             Sign In
           </button>
         </form>
